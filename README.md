@@ -17,11 +17,7 @@ Make sure `gcc` and `make` are installed.
 
 
 ## How to Run
-make
 make all
-
-
-## How to Run
 make run
 
 
