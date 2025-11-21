@@ -1,0 +1,68 @@
+Ex1: 
+This program demonstrates process creation using the fork() system call. The fork() function creates a new process by duplicating the calling process. 
+It returns:
+0 to the child process
+a positive value (child's PID) to the parent process 
+-1 if fork fails
+Both processes are executed independently after the fork. The child gets a copy of the parent's address space.
+
+
+Ex2: Starting Processes in the Background
+This exercise explains how to start process in the background using the & operator in a Unix/Linux shell.
+The command "sleep 300 &" starts the sleep process, which waits for 300 seconds, and then  returns control to the shell right awat so other commands can be run.
+jobs command: allows you to list all currently running background jobs. This is useful for multitasking on the terminal or managing multiple processes without waiting for each to finish.
+
+
+Ex3: Stopping Processes
+This exercise shows how to stop a running process using standard system monitoring and management commands.
+
+ps aux | grep sleep: 
+grep sleep: gets all processes with name sleep
+the | operator does the piping meaning it takes the output of grep sleep and applies the ps aux on it
+ps aux: lists all processes with their details , including their process ID (PID).
+
+the kill <PID> command is used to terminate the process with the identified PID.
+
+running ps aux | grep sleep again checks to ensure the process is no longer running. This sequence is essential for managing processes that may hang or run longer than needed​.
+
+
+Ex4: Pausing and Resuming a Process
+Here is temporarily halting and then resumeing a running process.
+kill -STOP <PID>: sends the STOP signal to a process, pausing its execution without terminating it.
+
+kill -CONT <PID>: sends the CONT (continue) signal, resuming the process from where it was paused.
+
+This functionality is valuable for troubleshooting, resource management, or temporarily freeing up system resources without losing process state.
+
+
+Ex5.1:
+This file contains the implementation of the hello() function. It demonstrates modular programming where function definitions can be separated across files.
+
+ 
+Ex5.2: 
+This file contains the main function that calls hello(). The function declaration void hello(); tells the compiler that the function exists elsewhere, allowing compilation to proceed before linking.
+
+
+Ex6:
+This basic program demonstrates library dependencies. When executed, it requires the C standard library to be dynamically loaded into memory at runtime.
+
+#include: directive in C is a preprocessor command that tells the compiler to incorporate the contents of another file into your program before actual compilation begins.
+
+personal study to comprehend the exercises more:
+<stdio.h>: is the standard input/output header file in C.
+
+pid_t: It is a data type (often an integer) used to store process IDs (PIDs) that uniquely identify each process running in an operating system.
+
+CC: is a Makefile variable that typically represents the name of the C compiler to use for building your programs.
+
+gcc: stands for GNU Compiler Collection; it is the standard compiler for C and other languages on Linux systems.
+
+CFLAGS: is a Makefile variable used to specify command-line options passed to the C compiler.
+
+-Wall: is a common gcc option included in CFLAGS to enable all major warnings about code quality and potential issues. It helps you catch errors.
+
+-g: is a compiler option that instructs gcc to include debugging information in the compiled executable. This makes it easier to use debugging tools.
+
+$(CC) is a Makefile macro that allows you to change the compiler for your whole project by altering one variable.
+
+$(CFLAGS): is a macro expanding to the flags/options you have set for compilation (like -Wall -g).lets you easily manage compilation options across all parts of your project.
